@@ -1,0 +1,265 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .name {
+    padding-left: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+header .name h1, h2 {
+    margin: 0;
+}
+
+header .log {
+    padding-right: 15px;
+}
+
+.band img {
+    width: 100%;
+    padding-top: 25px;
+}
+
+.list-post {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    padding-top: 25px;
+    margin-bottom: 50px;
+}
+
+.list-post .post .picture {
+    min-height: 275px;
+}
+
+
+.list-post .post {
+    width: 400px;
+    height: 550px;
+    position: relative;
+    box-shadow: 5px 5px 5px grey;
+    border: 1px solid grey;
+    margin-bottom: 25px;
+}
+
+.post a {
+    color: #000;
+    text-decoration: none;
+}
+
+.post p {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.post a:hover {
+    color: #535F90;
+}
+
+.post-head {
+    text-align: justify;
+}
+
+.post-action {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+.post-action img {
+    width: 25px;
+}
+
+.breadcump {
+    width: 75%;
+    margin: auto;
+}
+
+.breadcump p {
+    font-size: 21px;
+}
+
+.breadcump a {
+    color: #000;
+    text-decoration: none;
+}
+
+
+.breadcump a:hover {
+    color: #535F90;
+}
+
+.paginate {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.paginate a {
+    color: #000;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.paginate span.current {
+    color: #535F90;
+}
+
+.paginate a:hover {
+    color: #535F90;
+}
+
+footer {
+    background-color: #000;
+    width: 100%;
+    height: 350px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+footer .txt {
+    padding-top: 15px;
+}
+
+.iut, .ruby {
+    width: 450px;
+}
+
+.show-post {
+    width: 1163px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.show-post .title {
+    width: 100%;
+    font-size: 30px;
+}
+
+.show-post .post-head {
+    font-size: 18px;
+}
+
+.show-post .author {
+    width: 100%;
+    font-size: 18px;
+}
+
+.show-post .author a {
+    color: #000;
+    text-decoration: none;
+}
+
+.show-post .author a:hover {
+    color: #535F90;
+}
+
+.show-post .liens {
+    float: right;
+    width: 100%;
+}
+
+.show-post .liens .edit, .delete {
+    width: 50px;
+}
+
+.edit-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#new_user .field {
+    margin-bottom: 17px;
+}
+
+.edit-form form label {
+    font-size: 20px;
+    width: 500px;
+    margin-top: 20px;
+}
+
+.edit-form form input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 500px;
+    height: 30px;
+    border: none;
+    border-radius: 0;
+    background-color: #EBECEC;
+    padding-left: 7px;
+    -webkit-appearance: searchfield;
+    -moz-appearance: searchfield;
+    appearance: searchfield;
+}
+
+.edit-form form input[type="file"] {
+    width: 500px;
+    height: 30px;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: searchfield;
+    -moz-appearance: searchfield;
+    appearance: searchfield;
+}
+
+.edit-form form textarea {
+    height: 300px;
+    resize: none;
+}
+
+.edit-form form .date {
+    width: 500px;
+}
+
+
+.edit-form form .date #post_date_of_publication_1i, #post_date_of_publication_2i {
+    width: 160px;
+    margin-right: 5px;
+}
+
+.edit-form form .date #post_date_of_publication_3i {
+    width: 160px;
+}
+
+.edit-form form input[type="submit"] {
+    border: 1px solid #535F90;
+    border-radius: 0;
+    width: 150px;
+    height: 60px;
+    color: #fff;
+    background-color: #535F90;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.edit-form form input[type="submit"]:hover {
+    border: 1px solid #535F90;
+    color: #535F90;
+    background-color: #fff;
+    cursor: pointer;
+}
+

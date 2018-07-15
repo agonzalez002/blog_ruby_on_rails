@@ -1,0 +1,81 @@
+<header>
+  <div class="name">
+    <h1>DAWIN Alt - Le Blog</h1>
+    <h2>GONZALEZ Alexandre</h2>
+  </div>
+
+  <div class="log">
+    <p>
+      <% if user_signed_in? %>
+        Hello <strong><%= current_user.first_name %></strong>.
+        <%= link_to 'My profile', current_user, :class => 'navbar-link' %> |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to 'Login', new_user_session_path, :class => 'navbar-link' %>
+      <% end %>
+    </p>
+  </div>
+  
+</header>
+
+<div class="band">
+  <%= image_tag("bannierereseau4.jpg", :alt => "banniere reseau") %>
+</div>
+
+
+<div class="breadcump">
+	<p>All posts /</p>
+</div>
+
+
+<div class="list-post">
+  <% @post.order("created_at desc").each do |p| %>
+	<div class="post">
+		<div class="picture">
+			<img src="<%= p.file.thumb.url %>" alt="<%= p.title %>"/>
+		</div>
+
+		<%= link_to p do %>
+			<div class='title'>
+				<p><%= p.title %> - <%= p.date_of_publication.strftime('%d/%m/%Y') %></p>
+			</div>
+		<% end %>
+
+		<p class='post-head'><%= p.header %></p>
+
+		<p class='author'>Author : <%= p.user.first_name %></p>
+
+		<div class='post-action'>
+			<% if current_user %>
+				<% if (current_user.id == p.user_id) %>
+					<%= link_to edit_user_post_path(p.user_id, p.id) do %>
+						<%= image_tag("edit.png", :alt => "edit", :class => "edit") %>				
+					<% end %>
+					<%= link_to image_tag("delete.png", :alt => "delete", :class => "delete"), p, method: :delete, data: {confirm: "Are you sure ?"} %>
+				<% end %>
+			<% end %>
+		</div>
+
+	</div>
+  <% end %>
+</div>
+
+<div class="paginate">
+	<%= paginate @post %>
+</div>
+
+
+<footer>
+	<div class="txt">
+		<p>Project of Ruby On Rails.</p>
+		<p>Property of Alexandre GONZALEZ</p>
+	</div>
+	
+
+	<div class="logo">
+		<%= image_tag("iut.png", :alt => "Logo IUT de Bordeaux", :class => "iut") %>
+		<%= image_tag("Ruby.png", :alt => "Logo Ruby on Rail", :class => "ruby") %>	
+	</div>
+
+</footer>

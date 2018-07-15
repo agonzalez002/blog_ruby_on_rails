@@ -1,0 +1,98 @@
+<header>
+  <div class="name">
+    <h1>DAWIN Alt - Le Blog</h1>
+    <h2>GONZALEZ Alexandre</h2>
+  </div>
+
+  <div class="log">
+    <p>
+      <% if user_signed_in? %>
+        Hello <strong><%= current_user.first_name %></strong>.
+        <%= link_to 'My profile', current_user, :class => 'navbar-link' %> |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to 'Login', new_user_session_path, :class => 'navbar-link' %>
+      <% end %>
+    </p>
+  </div>
+  
+</header>
+
+<div class="breadcump">
+	<p><%= link_to "All posts", posts_path %> / Edit My Profil</p>
+</div>
+
+<h2 class="sign">Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3 class="sign">Cancel my account</h3>
+
+<div class="suppr">
+    <p>Unhappy? <%= button_to "Delete", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
+
+<div class="lien">
+	<%= link_to "Back", :back %>
+</div>
+
+<footer>
+	<div class="txt">
+		<p>Project of Ruby On Rails.</p>
+		<p>Property of Alexandre GONZALEZ</p>
+	</div>
+	
+
+	<div class="logo">
+		<%= image_tag("iut.png", :alt => "Logo IUT de Bordeaux", :class => "iut") %>
+		<%= image_tag("Ruby.png", :alt => "Logo Ruby on Rail", :class => "ruby") %>	
+	</div>
+
+</footer>
+
+

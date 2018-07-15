@@ -1,0 +1,147 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+.sign {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+#new_user, #edit_user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#new_user .field {
+    margin-bottom: 17px;
+}
+
+#new_user .field label {
+    font-size: 20px;
+}
+
+#new_user .field input[type="text"], input[type="email"], input[type="password"] {
+    width: 500px;
+    height: 30px;
+    border: none;
+    border-radius: 0;
+    background-color: #EBECEC;
+    padding-left: 7px;
+    -webkit-appearance: searchfield;
+    -moz-appearance: searchfield;
+    appearance: searchfield;
+}
+
+#new_user .actions input {
+    border: 1px solid #535F90;
+    border-radius: 0;
+    width: 150px;
+    height: 60px;
+    color: #fff;
+    background-color: #535F90;
+    font-size: 20px;
+}
+
+#new_user .actions input:hover {
+    border: 1px solid #535F90;
+    color: #535F90;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#edit_user .field {
+    margin-bottom: 17px;
+}
+
+#edit_user .field label {
+    font-size: 20px;
+}
+
+#edit_user .field input[type="text"], input[type="email"], input[type="password"] {
+    width: 500px;
+    height: 30px;
+    border: none;
+    border-radius: 0;
+    background-color: #EBECEC;
+    padding-left: 7px;
+    -webkit-appearance: searchfield;
+    -moz-appearance: searchfield;
+    appearance: searchfield;
+}
+
+#edit_user .actions input {
+    border: 1px solid #535F90;
+    border-radius: 0;
+    width: 150px;
+    height: 60px;
+    color: #fff;
+    background-color: #535F90;
+    font-size: 20px;
+}
+
+#edit_user .actions input:hover {
+    border: 1px solid #535F90;
+    color: #535F90;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.lien {
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+    margin-bottom: 25px;
+}
+
+.lien a {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.lien a:hover {
+    color: #535F90;
+}
+
+
+.suppr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suppr form input[type="submit"] {
+    border: 1px solid #535F90;
+    border-radius: 0;
+    width: 150px;
+    height: 60px;
+    color: #fff;
+    background-color: #535F90;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.suppr form input[type="submit"]:hover {
+    border: 1px solid #535F90;
+    color: #535F90;
+    background-color: #fff;
+    cursor: pointer;
+}
+

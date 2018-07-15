@@ -1,0 +1,59 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user {
+    width: 1385px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.user p {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.link {
+    margin-top: 45px;
+}
+
+.user .label {
+    text-decoration: underline;
+}
+
+.edit-user {
+    border: 1px solid #535F90;
+    border-radius: 0;
+    padding: 15px;
+    color: #fff;
+    background-color: #535F90;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.edit-user:hover {
+    border: 1px solid #535F90;
+    color: #535F90;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.user-post {
+    width: 1385px;
+    font-size: 30px;
+    margin: auto;
+}
+
+.content {
+    width: 1385px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.content .list-post {
+    width: 100%;
+}
+
+
+

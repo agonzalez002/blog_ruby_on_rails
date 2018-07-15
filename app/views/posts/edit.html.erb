@@ -1,0 +1,68 @@
+<header>
+  <div class="name">
+    <h1>DAWIN Alt - Le Blog</h1>
+    <h2>GONZALEZ Alexandre</h2>
+  </div>
+
+  <div class="log">
+    <p>
+      <% if user_signed_in? %>
+        Hello <strong><%= current_user.first_name %></strong>.
+        <%= link_to 'My profile', current_user, :class => 'navbar-link' %> |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to 'Login', new_user_session_path, :class => 'navbar-link' %>
+      <% end %>
+    </p>
+  </div>
+  
+</header>
+
+<div class="band">
+  <%= image_tag("bannierereseau4.jpg", :alt => "banniere reseau") %>
+</div>
+
+
+<div class="breadcump">
+	<p><%= link_to "All posts", posts_path %> / <%= link_to @post.title, post_path(@post) %> / Edit</p>
+</div>
+
+<div class="edit-form">
+	<%= form_for @post do |p| %>
+		<%= p.label :title %>
+		<%= p.text_field :title %>
+
+		<%= p.label :date_of_publication %>
+		<div class="date"><%= p.date_select :date_of_publication, id: :date_of_publication %></div>
+
+		<%= p.label :header %>
+		<%= p.text_area :header, class: "textArea" %>
+
+		<%= p.label :body %>
+		<%= p.text_area :body, class: "textArea" %>
+
+		<%= p.label :file %>
+		<%= p.file_field :file %>
+
+		<%= p.submit %>
+	<% end %>
+</div>
+
+
+
+<footer>
+	<div class="txt">
+		<p>Project of Ruby On Rails.</p>
+		<p>Property of Alexandre GONZALEZ</p>
+	</div>
+	
+
+	<div class="logo">
+		<%= image_tag("iut.png", :alt => "Logo IUT de Bordeaux", :class => "iut") %>
+		<%= image_tag("Ruby.png", :alt => "Logo Ruby on Rail", :class => "ruby") %>	
+	</div>
+
+</footer>
+  
+
